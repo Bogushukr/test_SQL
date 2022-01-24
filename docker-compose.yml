@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  mysql:
+    container_name: mysql_container1
+    image: mysql
+    env_file: './.env'
+    volumes:
+      - ./data/sql:/docker-entrypoint-initdb.d
+    ports:
+      - "8082:3306"
+    networks:
+      - local
+networks:
+  local:
+    driver: bridge
