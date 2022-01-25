@@ -41,5 +41,9 @@ CREATE TABLE users(
     PRIMARY KEY (id)
 );
 
-INSERT INTO users (userName) VALUES ("Vova");
+INSERT INTO users (userName) VALUES ("Alex");
 INSERT INTO users (userName) VALUES ("Irina");
+INSERT INTO users (userName) VALUES ("Vova");
+INSERT INTO users (userName) VALUES ("Olga");
+INSERT INTO users (userName) VALUES ("Lisa");
+INSERT INTO users (userName) VALUES ("Vasya");

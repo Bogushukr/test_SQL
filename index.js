@@ -6,12 +6,9 @@ import connection from './connection.js';
 dotenv.config();
 
 const { SERVER_PORT = 3000, DB_HOST, DB_PORT } = process.env;
-
 (async () => {
     try {
-        await new Promise((resolve, reject) => {
-            connection.connect(err => (err ? reject() : resolve()));
-        });
+        await connection;
 
         console.info(`Connected to database ${DB_HOST}:${DB_PORT}!`);
         app
@@ -25,6 +22,6 @@ const { SERVER_PORT = 3000, DB_HOST, DB_PORT } = process.env;
                 process.exit(1);
             });
     } catch (error) {
-        console.error(`Can\'t connect to database ${DB_HOST}:${DB_PORT}!`);
+        console.error(`Can\'t connect to database ${DB_HOST}:${DB_PORT}!\nReason: ${error}`);
     }
 })();

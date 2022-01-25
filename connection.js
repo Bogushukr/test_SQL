@@ -10,4 +10,4 @@ export default mysql.createConnection({
     database: MYSQL_DATABASE,
     user: DB_USER,
     password: MYSQL_ROOT_PASSWORD
-});
+}).promise();
